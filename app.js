@@ -11,13 +11,16 @@ app.use(express.static(path.join(__dirname, "uploads")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "http://localhost:5173"
+    origin: "https://abhishek-atk-vidyalai-task.netlify.app",
   })
 );
 app.get("/uploads/:fileName", (req, res) => {
   const filePath = path.join(__dirname, "uploads", req.params.fileName);
   res.sendFile(filePath, {
-    headers: { "Access-Control-Allow-Origin": "http://localhost:5173" },
+    headers: {
+      "Access-Control-Allow-Origin":
+        "https://abhishek-atk-vidyalai-task.netlify.app",
+    },
   });
 });
 app.use(bodyParser.json());
