@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const PORT = 4000;
 const app = express();
 const router = require("./routes/router");
-require("../backend/db/connection")
+require("./db/connection")
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "uploads")));
 app.use(bodyParser.urlencoded({ extended: true }));
